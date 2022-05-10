@@ -18,7 +18,7 @@ metadata:
   name: aad-pod-identity
   namespace: aad-pod-identity
 spec:
-  interval: 5m
+  interval: 1m
   chart:
     spec:
       chart: aad-pod-identity
