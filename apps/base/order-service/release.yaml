@@ -1,0 +1,18 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: order-service
+spec:
+  releaseName: order-service
+  chart:
+    spec:
+      chart: order-service
+      sourceRef:
+        kind: HelmRepository
+        name: fvxiaoyi
+        namespace: flux-system
+  interval: 1m
+  values:
+    image:
+      tag: "31" # {"$imagepolicy": "flux-system:order-service:tag"}
+    replicaCount: 1
